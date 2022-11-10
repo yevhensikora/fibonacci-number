@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>fibonacci-numbers</artifactId>
+    <artifactId>fibonacci-rows</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>fibonacci-numbers</name>
-    <description>fibonacci-numbers</description>
+    <name>fibonacci-rows</name>
+    <description>fibonacci-rows</description>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -27,6 +27,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+        </dependency>
+
     </dependencies>
 
     <build>

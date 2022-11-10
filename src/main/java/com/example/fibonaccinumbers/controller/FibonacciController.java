@@ -1,23 +1,24 @@
 package com.example.fibonaccinumbers.controller;
 
+import com.example.fibonaccinumbers.model.Request;
 import com.example.fibonaccinumbers.service.FibonacciService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/fibonacci-numbers")
+import java.util.List;
+
+
+@RequiredArgsConstructor
 @RestController
 public class FibonacciController {
 
     private final FibonacciService fibonacciService;
 
-    public FibonacciController(FibonacciService fibonacciService) {
-        this.fibonacciService = fibonacciService;
+    @GetMapping("/fibonacci-rows")
+    public List<String> getFibonacciRows(@RequestBody Request request) {
+        return fibonacciService.getFibonacciRows(request.getRows());
     }
 
-    @GetMapping("/{number}")
-    public String getFibonacciNumbers(@PathVariable int number) {
-        return fibonacciService.getFibonacciNumbers(number);
-    }
 }
